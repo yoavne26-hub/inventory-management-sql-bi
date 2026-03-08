@@ -174,7 +174,7 @@ Calculates how often customers use their saved addresses when placing orders.
 Suspicious Reseller Detection Function  
 Detects customers who order across many sport categories or purchase unusually large numbers of products.
 
-![Suspicious Resellers](screenshots/reseller_report.jpg)
+![Suspicious Resellers](screenshots/second_function.jpg)
 
 ---
 
