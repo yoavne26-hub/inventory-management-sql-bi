@@ -242,10 +242,6 @@ The dashboard also includes filters that allow users to analyze sales by:
 
 The central visualization shows **revenue distribution by sport category across time**, allowing analysts to identify which sports generate the most revenue and how sales evolve over time.
 
-Example dashboard:
-
-![Revenue Dashboard](screenshots/dashboard_overview.png)
-
 ---
 
 ## Yearly Revenue Analysis
@@ -270,7 +266,7 @@ This view allows analysts to identify:
 - the most profitable sport categories
 - product types that generate the highest revenue
 
-![Yearly Revenue](screenshots/dashboard_year.png)
+![Revenue Dashboard](screenshots/dashboard_overview.png)
 
 ---
 
