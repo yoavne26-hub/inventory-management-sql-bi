@@ -1,8 +1,4 @@
-# Create the README.md file for the user and save it so it can be downloaded
 
-import pypandoc
-
-text = """
 # Inventory Management SQL & Business Intelligence Project
 
 A relational database and analytics system built using Microsoft SQL Server and Power BI.
