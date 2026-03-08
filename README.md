@@ -386,23 +386,23 @@ Business Intelligence Analytics
 
 # How to Run the Project
 
-Open SQL Server Management Studio.
+1. Open SQL Server Management Studio.
 
-Run the database creation script:
+2. Run the database creation script:
 
 sql/01_build_database.sql
 
 This script creates the entire database schema and all constraints.
 
-Import the dataset from:
+3. Import the dataset from:
 
 data/sample_data.xlsx
 
-Run the analytical queries:
+4. Run the analytical queries:
 
 sql/02_business_queries_and_analytics.sql
 
-Finally open the Power BI dashboard:
+5. Finally open the Power BI dashboard:
 
 powerbi/inventory_analytics_dashboard.pbix
 
