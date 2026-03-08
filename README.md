@@ -410,7 +410,10 @@ Business Intelligence Analytics
 
 # Authors
 Roi Laniado
+
 Dana Gorodesky
-Yoav Nesher  
+
+Yoav Nesher 
+
 Industrial Engineering and Management  
 Ben-Gurion University
