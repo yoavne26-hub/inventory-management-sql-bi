@@ -283,8 +283,9 @@ powerbi/inventory_analytics_dashboard.pbix
 
 ---
 
-# Author
-
+# Authors
+Roi Laniado
+Dana Gorodesky
 Yoav Nesher  
 Industrial Engineering and Management  
 Ben-Gurion University
