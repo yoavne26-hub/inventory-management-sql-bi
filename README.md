@@ -25,7 +25,7 @@ The schema enforces relationships using primary keys, foreign keys, and constrai
 
 Entity Relationship Diagram:
 
-![ERD](screenshots/erd/erd.jpg)
+![ERD](screenshots/erd.jpg)
 
 ---
 
@@ -53,7 +53,7 @@ Another analysis identifies products whose average rating is below the average r
 
 Example query result:
 
-![Low Rated Products](screenshots/sql_results/query_low_rated_products.jpg)
+![Low Rated Products](screenshots/query_low_rated_products.jpg)
 
 ---
 
@@ -73,7 +73,7 @@ One example identifies VIP customers by first calculating order totals, then com
 
 Example output:
 
-![VIP Countries](screenshots/sql_results/cte_vip_countries.jpg)
+![VIP Countries](screenshots/cte_vip_countries.jpg)
 
 ---
 
@@ -95,11 +95,11 @@ Custom SQL functions were implemented to support advanced analysis.
 
 One function calculates how frequently customers place orders using their saved addresses.
 
-![Saved Address Usage](screenshots/sql_results/function_saved_address_usage.jpg)
+![Saved Address Usage](screenshots/function_saved_address_usage.jpg)
 
 Another function detects customers with unusual ordering behavior such as purchasing across multiple sport categories or ordering many different product designs.
 
-![Suspicious Resellers](screenshots/sql_results/function_suspicious_resellers.jpg)
+![Suspicious Resellers](screenshots/function_suspicious_resellers.jpg)
 
 ---
 
@@ -119,11 +119,11 @@ The procedure removes carts that contain no items and carts that contain items b
 
 Before cleanup:
 
-![Before Cleanup](screenshots/sql_results/procedure_before_cleanup.jpg)
+![Before Cleanup](screenshots/procedure_before_cleanup.jpg)
 
 After cleanup:
 
-![After Cleanup](screenshots/sql_results/procedure_after_cleanup.jpg)
+![After Cleanup](screenshots/procedure_after_cleanup.jpg)
 
 ---
 
@@ -135,7 +135,7 @@ The dashboards analyze revenue trends over time, sales distribution by sport cat
 
 Example dashboard:
 
-![Power BI Dashboard](screenshots/powerbi/dashboard_overview.png)
+![Power BI Dashboard](screenshots/dashboard_overview.png)
 
 ---
 
