@@ -1,27 +1,74 @@
+# Owayo Database Reconstruction & SQL Analytics Project
 
-# Inventory Management SQL & Business Intelligence Project
+This project was developed as part of a **Database Systems course** in the Industrial Engineering and Management program at **Ben-Gurion University**.
 
-A relational database and analytics system built using Microsoft SQL Server and Power BI.
+The project was completed by a team of three students and focuses on analyzing the structure and business processes of the sports apparel website **Owayo**.
 
-The project simulates an e-commerce platform for customizable sports products and demonstrates the full lifecycle of a data system including database design, relational schema implementation, advanced SQL analytics, data integrity enforcement, and business intelligence dashboards.
+https://www.owayo.com/
 
-The system stores and analyzes information about customers, products, designs, orders, reviews, and shopping carts in order to generate business insights.
+Owayo is a German company specializing in customizable sports clothing. The company allows athletes and sports teams to design and order personalized sports apparel through an online platform that includes advanced customization tools and an integrated ordering system.
+
+Our goal in this project was to **reconstruct the database infrastructure behind such a platform from scratch**, using the concepts learned during the course. Starting from an analysis of the website and its business processes, we designed a relational database that models the core operations of the platform.
+
+The system we designed simulates the backend data structure required to support an e-commerce platform for customizable sports products. The project includes the complete lifecycle of a data system:
+
+- business process analysis
+- conceptual database design
+- relational schema implementation
+- SQL analytics
+- data integrity enforcement
+- business intelligence dashboards
+
+The database stores and analyzes information about customers, products, designs, orders, reviews, and shopping carts in order to generate meaningful insights about customer behavior and product performance.
+
+---
+
+# The Website We Modeled
+
+The Owayo platform enables customers to design custom sports apparel and order it directly through the website.
+
+The typical business flow on the platform includes:
+
+1. The customer selects a sport category.
+2. The customer designs a customized product.
+3. The design is added to a shopping cart.
+4. The customer provides shipping and payment information.
+5. The order is processed and delivered.
+
+The database designed in this project models each stage of this process and captures the relationships between customers, products, designs, orders, and shipping information.
 
 ---
 
 # Project Goals
 
-The main goals of the project were to design a relational database architecture, implement data integrity constraints, build analytical SQL queries, detect business patterns and anomalies, and create Power BI dashboards for decision support.
+The main goals of the project were:
 
-The system simulates realistic data to analyze customer purchasing behavior, product performance, and potential reseller activity.
+- to analyze a real website and understand its business processes
+- to design a relational database architecture from scratch
+- to enforce data integrity using constraints and relationships
+- to implement analytical SQL queries for business insights
+- to identify patterns in customer behavior and product performance
+- to build Power BI dashboards for decision support
+
+The system simulates realistic data in order to analyze purchasing behavior, product ratings, and potential reseller activity.
 
 ---
 
 # Database Architecture
 
-The system is designed as a relational database composed of several main entities including customers, user accounts, addresses, shopping carts, orders, products, designs, reviews, and product roster entries.
+The system is designed as a relational database composed of several main entities including:
 
-The schema enforces relationships using primary keys, foreign keys, and constraints to maintain data integrity.
+- Customers
+- User Accounts
+- Addresses
+- Shopping Carts
+- Orders
+- Products
+- Designs
+- Reviews
+- Product Rosters
+
+Relationships between these entities are enforced using **primary keys, foreign keys, and relational constraints** to ensure consistency and prevent invalid data.
 
 Entity Relationship Diagram:
 
@@ -29,29 +76,39 @@ Entity Relationship Diagram:
 
 ---
 
-# Database Constraints and Integrity
+# Data Integrity and Constraints
 
-Several constraints were implemented to ensure valid and consistent data.
+Several mechanisms were implemented to ensure the reliability of the data stored in the database.
 
-Foreign keys enforce referential integrity between related tables such as Orders and Carts, Rosters and Designs, Products and SportFields, and Reviews and Products.
+Foreign keys enforce relationships between tables such as:
 
-Check constraints validate different types of input including phone number format, email format, positive quantities for product items, and valid credit card expiration dates.
+- Orders and Carts
+- Rosters and Designs
+- Products and Sport Categories
+- Reviews and Products
 
-These constraints prevent inconsistent or invalid records from entering the system.
+Additional check constraints validate different types of input, including:
+
+- phone number format
+- email format
+- positive quantities for ordered products
+- valid payment information
+
+These constraints help prevent inconsistent or incorrect records from entering the database.
 
 ---
 
 # SQL Analytical Queries
 
-The project includes multiple analytical queries designed to answer business questions.
+The project includes several analytical SQL queries designed to answer business questions about the platform.
 
-One query identifies the sport categories generating the highest revenue by aggregating quantities sold and total earnings per category.
+Examples include:
 
-Another query detects high value customers by counting the number of orders placed and calculating total spending over the last five years.
+- identifying the sport categories generating the highest revenue
+- detecting high-value customers based on their order history
+- identifying products with ratings below the average of their category
 
-Another analysis identifies products whose average rating is below the average rating of their sport category.
-
-Example query result:
+Example query output:
 
 ![Low Rated Products](screenshots/query_low_rated_products.jpg)
 
@@ -59,17 +116,28 @@ Example query result:
 
 # Window Functions
 
-Window functions were used to analyze revenue trends over time.
+Window functions were used to analyze sales performance over time.
 
-The query calculates monthly revenue, compares it with the previous month’s sales, and computes the average revenue of the previous three months. This allows identifying growth and decline patterns in sales performance.
+These queries calculate:
+
+- monthly revenue
+- revenue compared with the previous month
+- rolling three-month revenue averages
+
+This allows identifying growth trends and seasonal patterns in sales.
 
 ---
 
 # Common Table Expressions (CTE)
 
-Common table expressions were used to build multi stage analytical pipelines.
+CTEs were used to build multi-stage analytical queries.
 
-One example identifies VIP customers by first calculating order totals, then computing the average order value, identifying customers with orders above that average, and finally detecting countries with the highest number of VIP customers.
+One example identifies **VIP customers** by:
+
+1. calculating the value of each order
+2. computing the average order value
+3. identifying customers with above-average purchases
+4. determining which countries contain the highest concentration of VIP customers
 
 Example output:
 
@@ -79,25 +147,32 @@ Example output:
 
 # SQL Views
 
-Several views were created to simplify business analytics.
+Several views were created to simplify complex analytical queries.
 
-One view combines customers, products, orders, and addresses to provide a detailed representation of customer purchase activity.
+Examples include:
 
-Another view identifies abandoned shopping carts that were created but never converted into orders.
+Customer Order Details  
+A view combining customers, products, orders, and shipping addresses to simplify purchase analysis.
 
-Another view summarizes customer activity to detect suspicious reseller behavior based on the number of sport categories ordered, the number of product designs purchased, and total quantity ordered.
+Abandoned Cart Detection  
+A view identifying carts that were created but never converted into orders.
+
+Suspicious Reseller Summary  
+A view aggregating customer activity to identify unusual purchasing patterns.
 
 ---
 
 # SQL Functions
 
-Custom SQL functions were implemented to support advanced analysis.
+Custom SQL functions were implemented to support deeper analysis.
 
-One function calculates how frequently customers place orders using their saved addresses.
+Saved Address Usage Function  
+Calculates how often customers use their saved addresses when placing orders.
 
 ![Saved Address Usage](screenshots/function_saved_address_usage.jpg)
 
-Another function detects customers with unusual ordering behavior such as purchasing across multiple sport categories or ordering many different product designs.
+Suspicious Reseller Detection Function  
+Detects customers who order across many sport categories or purchase unusually large numbers of products.
 
 ![Suspicious Resellers](screenshots/function_suspicious_resellers.jpg)
 
@@ -105,17 +180,22 @@ Another function detects customers with unusual ordering behavior such as purcha
 
 # Trigger Implementation
 
-A trigger was implemented to ensure review integrity.
+A trigger was implemented to ensure the reliability of product reviews.
 
-Users are only allowed to submit a review if they have previously purchased the product. If a review is inserted for a product that was not purchased, the trigger automatically removes the record. This ensures the reliability of the review system.
+Users are only allowed to submit a review if they have actually purchased the product. If a review is inserted for a product that was never purchased by that user, the trigger automatically removes the review.
+
+This ensures that the review system reflects genuine customer feedback.
 
 ---
 
 # Stored Procedure
 
-A stored procedure was developed to maintain database hygiene by cleaning abandoned carts.
+A stored procedure was implemented to clean abandoned shopping carts.
 
-The procedure removes carts that contain no items and carts that contain items but were never converted into orders.
+The procedure removes:
+
+- carts that contain no items
+- carts that contain items but were never converted into orders
 
 Before cleanup:
 
@@ -129,9 +209,14 @@ After cleanup:
 
 # Business Intelligence Dashboard
 
-Power BI dashboards were created to visualize insights extracted from the database.
+Power BI dashboards were created to visualize the insights generated from the database.
 
-The dashboards analyze revenue trends over time, sales distribution by sport category, customer purchasing behavior, and potential reseller activity.
+The dashboards analyze:
+
+- revenue trends
+- sales distribution by sport category
+- customer purchasing behavior
+- potential reseller activity
 
 Example dashboard:
 
@@ -141,27 +226,26 @@ Example dashboard:
 
 # Repository Structure
 
+```
 inventory-management-sql-bi
 
-sql  
-01_build_database.sql  
-02_business_queries_and_analytics.sql  
+sql
+01_build_database.sql
+02_business_queries_and_analytics.sql
 
-data  
-sample_data.xlsx  
+data
+sample_data.xlsx
 
-powerbi  
-inventory_analytics_dashboard.pbix  
+powerbi
+inventory_analytics_dashboard.pbix
 
-screenshots  
-erd  
-powerbi  
-sql_results  
+screenshots
 
-docs  
-project_part1_business_analysis.docx  
-project_part2_database_design.docx  
-project_part3_sql_bi.docx  
+docs
+project_part1_business_analysis.docx
+project_part2_database_design.docx
+project_part3_sql_bi.docx
+```
 
 ---
 
@@ -179,11 +263,11 @@ Business Intelligence Analytics
 
 Open SQL Server Management Studio.
 
-Run the script:
+Run the database creation script:
 
 sql/01_build_database.sql
 
-This creates the full database schema and constraints.
+This script creates the entire database schema and all constraints.
 
 Import the dataset from:
 
@@ -203,10 +287,4 @@ powerbi/inventory_analytics_dashboard.pbix
 
 Yoav Nesher  
 Industrial Engineering and Management  
-Ben Gurion University
-"""
-
-output_path = "/mnt/data/README.md"
-pypandoc.convert_text(text, 'md', format='md', outputfile=output_path, extra_args=['--standalone'])
-
-output_path
+Ben-Gurion University
