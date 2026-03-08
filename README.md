@@ -390,21 +390,21 @@ Business Intelligence Analytics
 
 2. Run the database creation script:
 
-sql/01_build_database.sql
+   sql/01_build_database.sql
 
-This script creates the entire database schema and all constraints.
+   This script creates the entire database schema and all constraints.
 
 3. Import the dataset from:
 
-data/sample_data.xlsx
+   data/sample_data.xlsx
 
 4. Run the analytical queries:
 
-sql/02_business_queries_and_analytics.sql
+   sql/02_business_queries_and_analytics.sql
 
 5. Finally open the Power BI dashboard:
 
-powerbi/inventory_analytics_dashboard.pbix
+   powerbi/inventory_analytics_dashboard.pbix
 
 ---
 
